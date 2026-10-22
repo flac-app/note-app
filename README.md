@@ -4,13 +4,19 @@
 
 # note.
 
-**Minimalist sticky notes app for those who like to take small notes often.**
+**Minimalist sticky notes app for those who like to take notes often and need them easily accessible.**
 
 ![Platform](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D6?logo=windows)
 
 <!-- <img src="docs/screenshots/hero.png" alt="note. on the desktop" width="720"> -->
 
 </div>
+
+## Why did you make this?
+
+The main reason of me making note. was because I needed a convenient way of quickly taking notes without opening a whole notepad or Word doc while playing TTRPGs online. I desperately needed something that can stay in my view and not require me to alt-tab.
+
+Second reason was because I feel unproductive and often forget things if I don't take notes, note. helps with that.
 
 ## Features
 
