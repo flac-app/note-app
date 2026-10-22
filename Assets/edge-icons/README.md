@@ -1,0 +1,1 @@
+Place default.png here to replace every tab icon, or <note-id>.png to override one note. Use a PNG with transparency; see ../README.md for details. No PNG is required: missing or invalid artwork uses the symbol from note settings.

@@ -1,0 +1,57 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+ <Style x:Key="FormatButton" TargetType="ToggleButton">
+  <Setter Property="Width" Value="26"/><Setter Property="Height" Value="25"/><Setter Property="Opacity" Value="1"/><Setter Property="Cursor" Value="Hand"/>
+  <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="ToggleButton">
+   <Grid>
+    <Border x:Name="wash" CornerRadius="4" Background="{TemplateBinding Foreground}" Opacity="0"/>
+    <Border x:Name="outline" CornerRadius="4" BorderBrush="{TemplateBinding Foreground}" BorderThickness="1" Opacity="0"/>
+    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Border x:Name="active" Height="2" Margin="7,0,7,2" VerticalAlignment="Bottom" Background="{TemplateBinding Foreground}" CornerRadius="1" Visibility="Collapsed"/>
+   </Grid>
+   <ControlTemplate.Triggers>
+    <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="wash" Property="Opacity" Value="0.1"/></Trigger>
+    <Trigger Property="IsChecked" Value="True"><Setter TargetName="wash" Property="Opacity" Value="0.22"/><Setter TargetName="outline" Property="Opacity" Value="0.6"/><Setter TargetName="active" Property="Visibility" Value="Visible"/></Trigger>
+    <Trigger Property="IsPressed" Value="True"><Setter TargetName="wash" Property="Opacity" Value="0.32"/></Trigger>
+    <Trigger Property="IsEnabled" Value="False"><Setter Property="Opacity" Value="0.35"/></Trigger>
+   </ControlTemplate.Triggers>
+  </ControlTemplate></Setter.Value></Setter>
+ </Style>
+ <ControlTemplate x:Key="SlimScrollViewer" TargetType="ScrollViewer">
+   <Grid Background="{TemplateBinding Background}">
+    <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+    <Grid.RowDefinitions><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+    <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" Margin="{TemplateBinding Padding}" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" CanContentScroll="{TemplateBinding CanContentScroll}"/>
+    <ScrollBar x:Name="PART_VerticalScrollBar" Grid.Column="1" Width="6" Orientation="Vertical" Minimum="0" Maximum="{TemplateBinding ScrollableHeight}" ViewportSize="{TemplateBinding ViewportHeight}" Value="{TemplateBinding VerticalOffset}" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"/>
+    <ScrollBar x:Name="PART_HorizontalScrollBar" Grid.Row="1" Width="Auto" Height="6" Orientation="Horizontal" Minimum="0" Maximum="{TemplateBinding ScrollableWidth}" ViewportSize="{TemplateBinding ViewportWidth}" Value="{TemplateBinding HorizontalOffset}" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
+   </Grid>
+ </ControlTemplate>
+ <Style TargetType="ScrollViewer"><Setter Property="Template" Value="{StaticResource SlimScrollViewer}"/></Style>
+ <ControlTemplate x:Key="NoteEditorTemplate" TargetType="RichTextBox">
+  <ScrollViewer x:Name="PART_ContentHost" Style="{StaticResource {x:Type ScrollViewer}}" Template="{StaticResource SlimScrollViewer}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" Focusable="False" HorizontalScrollBarVisibility="{TemplateBinding HorizontalScrollBarVisibility}" VerticalScrollBarVisibility="{TemplateBinding VerticalScrollBarVisibility}"/>
+ </ControlTemplate>
+ <Style TargetType="ScrollBar">
+  <Setter Property="MinWidth" Value="0"/><Setter Property="MinHeight" Value="0"/>
+  <Setter Property="Width" Value="6"/><Setter Property="Foreground" Value="{DynamicResource ScrollInk}"/><Setter Property="Background" Value="Transparent"/>
+  <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="ScrollBar">
+   <Grid Background="Transparent">
+    <Track x:Name="PART_Track" Orientation="{TemplateBinding Orientation}" IsDirectionReversed="True" Minimum="{TemplateBinding Minimum}" Maximum="{TemplateBinding Maximum}" ViewportSize="{TemplateBinding ViewportSize}" Value="{Binding Value, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}">
+     <Track.DecreaseRepeatButton><RepeatButton x:Name="before" Command="ScrollBar.PageUpCommand" Focusable="False"><RepeatButton.Template><ControlTemplate TargetType="RepeatButton"><Border Background="Transparent"/></ControlTemplate></RepeatButton.Template></RepeatButton></Track.DecreaseRepeatButton>
+     <Track.Thumb><Thumb MinHeight="24" MinWidth="4" Background="{TemplateBinding Foreground}">
+      <Thumb.Template><ControlTemplate TargetType="Thumb">
+       <Border Background="Transparent"><Border x:Name="grip" Background="{TemplateBinding Background}" CornerRadius="2" Margin="1.5" Opacity="0.7"/></Border>
+       <ControlTemplate.Triggers>
+        <Trigger Property="IsMouseOver" Value="True"><Trigger.EnterActions><BeginStoryboard><Storyboard><DoubleAnimation Storyboard.TargetName="grip" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.15"/></Storyboard></BeginStoryboard></Trigger.EnterActions><Trigger.ExitActions><BeginStoryboard><Storyboard><DoubleAnimation Storyboard.TargetName="grip" Storyboard.TargetProperty="Opacity" To="0.7" Duration="0:0:0.2"/></Storyboard></BeginStoryboard></Trigger.ExitActions></Trigger>
+        <Trigger Property="IsDragging" Value="True"><Setter TargetName="grip" Property="Opacity" Value="1"/></Trigger>
+       </ControlTemplate.Triggers>
+      </ControlTemplate></Thumb.Template>
+     </Thumb></Track.Thumb>
+     <Track.IncreaseRepeatButton><RepeatButton x:Name="after" Command="ScrollBar.PageDownCommand" Focusable="False"><RepeatButton.Template><ControlTemplate TargetType="RepeatButton"><Border Background="Transparent"/></ControlTemplate></RepeatButton.Template></RepeatButton></Track.IncreaseRepeatButton>
+    </Track>
+   </Grid>
+   <ControlTemplate.Triggers><Trigger Property="Orientation" Value="Horizontal"><Setter TargetName="PART_Track" Property="IsDirectionReversed" Value="False"/><Setter TargetName="before" Property="Command" Value="ScrollBar.PageLeftCommand"/><Setter TargetName="after" Property="Command" Value="ScrollBar.PageRightCommand"/></Trigger></ControlTemplate.Triggers>
+  </ControlTemplate></Setter.Value></Setter>
+  <Style.Triggers><Trigger Property="Orientation" Value="Horizontal"><Setter Property="Width" Value="Auto"/><Setter Property="Height" Value="6"/></Trigger></Style.Triggers>
+ </Style>
+</ResourceDictionary>
+
+

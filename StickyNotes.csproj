@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Version>0.8.2</Version>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+    <AssemblyName>note.app</AssemblyName>
+    <RootNamespace>StickyNotes</RootNamespace>
+    <Title>note.</Title>
+    <AssemblyTitle>A simple sticky notes app. Portable version.</AssemblyTitle>
+    <Product>note.app</Product>
+    <Description>A simple sticky notes app. Portable version.</Description>
+    <Company>flac.app Studios</Company>
+    <ApplicationIcon>NoteappFinal.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup><Compile Remove="tests\**\*.cs"/><EmbeddedResource Remove="tests\**\*"/><None Remove="tests\**\*"/><Page Remove="tests\**\*.xaml"/></ItemGroup>
+  <ItemGroup><None Update="Assets\**\*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest"/></ItemGroup>
+  <ItemGroup><None Remove="Assets\sfx\**"/><EmbeddedResource Include="Assets\sfx\*" LogicalName="sounds/%(Filename)%(Extension)"/></ItemGroup>
+  <PropertyGroup><EasterEgg Condition="'$(EasterEgg)' == ''">true</EasterEgg></PropertyGroup>
+  <PropertyGroup Condition="'$(EasterEgg)' == 'true'"><DefineConstants>$(DefineConstants);EASTER_EGG</DefineConstants></PropertyGroup>
+  <ItemGroup Condition="'$(EasterEgg)' == 'true'"><EmbeddedResource Include="Assets\sfx\Other\*.mp3" LogicalName="egg/%(Filename)%(Extension)"/></ItemGroup>
+  <ItemGroup><Resource Include="NoteappFinal.ico"/><Resource Include="Tomorrow-Regular.ttf"/><Resource Include="Fonts\*.ttf"/></ItemGroup>
+</Project>
+
+

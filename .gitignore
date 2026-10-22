@@ -1,0 +1,14 @@
+bin/
+obj/
+dist/
+artifacts/
+tests/bin/
+tests/obj/
+.vs/
+*.user
+tests/
+Start note.app.cmd
+CLAUDE.md
+.claude/
+.mcp.json
+*.log

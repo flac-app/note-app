@@ -1,0 +1,13 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+ <ResourceDictionary.MergedDictionaries><ResourceDictionary Source="NotebookControls.xaml"/></ResourceDictionary.MergedDictionaries>
+ <SolidColorBrush x:Key="ScrollInk" Color="#777777"/>
+ <Style TargetType="Button">
+  <Setter Property="Padding" Value="10,6"/>
+  <Setter Property="Margin" Value="3"/>
+  <Setter Property="Background" Value="#FFF9EE"/>
+  <Setter Property="BorderBrush" Value="#D8CDBA"/>
+  <Setter Property="Cursor" Value="Hand"/>
+ </Style>
+</ResourceDictionary>
+
+
