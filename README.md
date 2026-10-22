@@ -14,7 +14,8 @@
 
 ## Why was note. made?
 
-The main reason behind the creation of note. was because I needed a convenient way of quickly taking notes without opening a whole notepad or Word doc while playing TTRPGs online. I desperately needed something that can stay in my view without taking up the whole screen and not require me to alt-tab, because it is a pain _(and quite distracting)_ to Alt+Tab constantly especially if you have multiple things open to begin with.
+The main reason behind the creation of note. was because I needed a convenient way of quickly taking notes without opening a whole notepad or Word doc while playing TTRPGs online. 
+I desperately needed something that can stay in my view without taking up the whole screen and not require me to alt-tab, because it is a pain _(and quite distracting)_ to Alt+Tab constantly especially if you have multiple things open to begin with.
 
 Second reason was because I feel unproductive and often forget things if I don't take notes, note. helps with that.
 
@@ -31,6 +32,7 @@ Second reason was because I feel unproductive and often forget things if I don't
 - **Shortcuts**: `Ctrl+Alt+N` makes a new note from anywhere. Every shortcut can be changed.
 - **Your look**: Any custom color, adjustable transparency, notebook-style worn paper and tabs, and dark mode.
 - **Private**: The notes ared saved automatically to your PC. No account required and no cloud involvement.
+- **Overlay**: The note. app has the ability to stay on top of any app that works on borderless mode, including games, no support for full-screen apps yet.
 
 ## Install
 
@@ -44,3 +46,11 @@ To launch **note.** when Windows starts, turn on **⚙ → Open on system startu
 ## Learn more
 
 The **[user guide](docs/USER_GUIDE.md)** covers every feature and setting, plus how to back up your notes.
+
+## ⚠️ DISCLAIMER 
+
+**note. is built for convenience and not security.** Your notes are stored **unencrypted** on your PC. **DO NOT** write your personal information or other sensitive information such as passwords or API keys into the app. The developer is not responsible for any loss of data or any data leaks.
+
+The "no encryption" model is a conscious choice made for convenience, as the app requires no login screen or a passkey and backups can be transferred between systems easily.
+
+The **note.** app is made to work completely offline, and it does not send your data anywhere, the entirety of your app data is stored locally on your computer.
