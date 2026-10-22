@@ -1,7 +1,3 @@
-# note. — note.app for Windows
-
-A native WPF app. Notes stay on your desktop and are saved locally.
-
 ## Run
 
 Run `note.app-0.8.2-setup.exe` to install (your notes are kept on uninstall).
