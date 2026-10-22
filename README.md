@@ -15,7 +15,8 @@
 ## Why was note. made?
 
 The main reason behind the creation of note. was because I needed a convenient way of quickly taking notes without opening a whole notepad or Word doc while playing TTRPGs online. 
-I desperately needed something that can stay in my view without taking up the whole screen and not require me to alt-tab, because it is a pain _(and quite distracting)_ to Alt+Tab constantly especially if you have multiple things open to begin with.
+
+I desperately needed something that can stay in my view without taking up the whole screen and not require me to Alt+Tab to read it, because it is a pain _(and quite distracting)_ to Alt+Tab constantly especially if you have multiple other things open to begin with.
 
 Second reason was because I feel unproductive and often forget things if I don't take notes, note. helps with that.
 
