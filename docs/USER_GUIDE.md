@@ -4,8 +4,8 @@ A native WPF app. Notes stay on your desktop and are saved locally.
 
 ## Run
 
-Run `note.app-0.8.2-setup.exe` to install (per user, no admin prompt; adds a Start menu entry, an optional desktop shortcut and an uninstaller; your notes are kept on uninstall).
-The portable Windows x64 EXE includes the .NET desktop runtime and needs no installation.
+Run `note.app-0.8.2-setup.exe` to install (your notes are kept on uninstall).
+The portable Windows x64 EXE needs no installation.
 
 Enable **Open on system startup** in the library's **⚙** preferences to launch at Windows sign-in. Only one copy of note. starts at sign-in: turning the option on (or off) clears any entry left by another copy, such as an older portable build, and if Windows still starts a different copy, a line under the option says which. If you move the portable EXE, turn the option on again from its new location. Right-click the EXE and choose **Send to → Desktop (create shortcut)** for a desktop shortcut with the app icon.
 
